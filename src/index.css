@@ -26,3 +26,7 @@ html {
 .slick-dots {
   bottom: initial !important;
 }
+
+.dir-ltr {
+  direction: ltr;
+}

@@ -1,11 +1,13 @@
 // src/components/WhyUs.jsx
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { FaGlobe, FaLightbulb, FaHandshake } from "react-icons/fa";
 import { WhyUsFeatures } from "../data";
 import SplitLineHeader from "./SplitLineHeader";
 import { motion } from "framer-motion"; // استيراد Framer Motion
 
 const WhyUs = () => {
+  const { t } = useTranslation();
   const icons = {
     1: FaGlobe,
     2: FaLightbulb,
@@ -37,7 +39,7 @@ const WhyUs = () => {
     <section id="why-us" className="py-20 sm:px-5 bg-[#153457] text-white">
       <div className="container mx-auto px-4">
         {/* العناوين */}
-        <SplitLineHeader title="Why Us" />
+        <SplitLineHeader title={t("nav.whyUs")} />
 
         {/* تطبيق الأنيميشن على حاوية الكروت */}
         <motion.div
@@ -70,12 +72,12 @@ const WhyUs = () => {
 
                 {/* العنوان */}
                 <h3 className="relative z-10 text-3xl font-extrabold mb-4 text-[#E3C199] group-hover:text-white transition-colors duration-300">
-                  {feature.title}
+                  {t(feature.title)}
                 </h3>
 
                 {/* الوصف */}
                 <p className="relative z-10 text-gray-300 leading-relaxed text-lg group-hover:text-gray-100 transition-colors duration-300">
-                  {feature.description}
+                  {t(feature.description)}
                 </p>
               </motion.div>
             );

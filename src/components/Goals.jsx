@@ -1,11 +1,13 @@
 // src/components/Goals.jsx
 import React from "react";
+import { useTranslation } from "react-i18next";
 import CountUp from "react-countup";
 import { FaUsers, FaCube, FaHandshake, FaAward } from "react-icons/fa"; // استيراد الأيقونات
 import { GoalsData } from "../data";
 import SplitLineHeader from "./SplitLineHeader";
 
 const Goals = () => {
+  const { t } = useTranslation();
   const IconComponents = {
     FaUsers: FaUsers,
     FaCube: FaCube,
@@ -17,7 +19,7 @@ const Goals = () => {
     <section id="goals" className="py-20 sm:px-5 bg-[#1F476F] text-white">
       {/* خلفية أغمق للقسم */}
       <div className="container mx-auto px-4">
-        <SplitLineHeader title="Our Goals" />
+        <SplitLineHeader title={t("goals.ourGoals")} />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
           {GoalsData.map((goal) => {
             const IconComponent = IconComponents[goal.icon];
@@ -42,9 +44,8 @@ const Goals = () => {
                   />
                 </div>
                 <h3 className="text-xl md:text-2xl font-semibold text-[#E3C194]">
-                  {" "}
                   {/* لون فاتح للعناوين */}
-                  {goal.title}
+                  {t(goal.title)}
                 </h3>
               </div>
             );

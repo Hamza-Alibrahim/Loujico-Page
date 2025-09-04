@@ -1,11 +1,17 @@
 // src/components/MobileNav.jsx
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
 import { NavLinks, PortfolioDropdownLinks } from "../../data";
 
 const MobileNav = () => {
+  const {
+    t,
+    i18n: { language, changeLanguage },
+  } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isPortfolioOpen, setIsPortfolioOpen] = useState(false);
+  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -13,6 +19,10 @@ const MobileNav = () => {
 
   const togglePortfolio = () => {
     setIsPortfolioOpen(!isPortfolioOpen);
+  };
+
+  const toggleLanguage = () => {
+    setIsLanguageOpen(!isLanguageOpen);
   };
 
   const closeMenu = () => {
@@ -57,13 +67,13 @@ const MobileNav = () => {
               key={link.id}
               className="w-full border-b border-gray-200 last:border-b-0"
             >
-              {link.title === "Portfolio" ? (
+              {link.title === "nav.portfolio" ? (
                 <div>
                   <button
                     onClick={togglePortfolio}
                     className="w-full flex justify-between items-center p-4 text-[#1F476F] hover:text-[#B88647] transition duration-300"
                   >
-                    <span>{link.title}</span>
+                    <span>{t(link.title)}</span>
                     <FaChevronDown
                       className={`transition-transform duration-300 ${
                         isPortfolioOpen ? "rotate-180" : "rotate-0"
@@ -82,7 +92,7 @@ const MobileNav = () => {
                             onClick={closeMenu}
                             className="block w-full p-4 text-[#1F476F] hover:text-[#B88647] transition duration-300"
                           >
-                            {dropdownLink.title}
+                            {t(dropdownLink.title)}
                           </a>
                         </li>
                       ))}
@@ -95,11 +105,39 @@ const MobileNav = () => {
                   onClick={closeMenu}
                   className="block w-full p-4 text-[#1F476F] hover:text-[#B88647] transition duration-300"
                 >
-                  {link.title}
+                  {t(link.title)}
                 </a>
               )}
             </li>
           ))}
+          <div>
+            <button
+              onClick={toggleLanguage}
+              className="w-full flex justify-between items-center p-4 text-[#1F476F] hover:text-[#B88647] transition duration-300"
+            >
+              <span>{language === "en" ? "English" : "العربية"}</span>
+              <FaChevronDown
+                className={`transition-transform duration-300 ${
+                  isLanguageOpen ? "rotate-180" : "rotate-0"
+                }`}
+              />
+            </button>
+            {isLanguageOpen && (
+              <ul className="flex flex-col bg-gray-100 items-center space-y-0 text-lg">
+                <li className="w-full border-b border-gray-300 last:border-b-0">
+                  <span
+                    onClick={() => {
+                      closeMenu();
+                      changeLanguage(language === "ar" ? "en" : "ar");
+                    }}
+                    className="block w-full p-4 text-[#1F476F] hover:text-[#B88647] transition duration-300"
+                  >
+                    {language === "ar" ? "الانجليزية" : "Arabic"}
+                  </span>
+                </li>
+              </ul>
+            )}
+          </div>
         </ul>
       </div>
     </nav>

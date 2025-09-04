@@ -1,30 +1,31 @@
 // src/data.jsx
+
 // الروابط الأساسية في الناف بار
 export const NavLinks = [
     {
         id: "1",
         path: "#home",
-        title: "Home"
+        title: "nav.home"
     },
     {
         id: "2",
         path: "#portfolio",
-        title: "Portfolio"
+        title: "nav.portfolio"
     },
     {
         id: "3",
         path: "#why-us",
-        title: "Why Us"
+        title: "nav.whyUs"
     },
     {
         id: "4",
         path: "#goals",
-        title: "Goals"
+        title: "nav.goals"
     },
     {
         id: "5",
         path: "#follow-us",
-        title: "Follow Us"
+        title: "nav.followUs"
     }
 ];
 
@@ -33,330 +34,332 @@ export const PortfolioDropdownLinks = [
     {
         id: "1",
         path: "#founding-business",
-        title: "Founding Business"
+        title: "portfolio.foundingBusiness"
     },
     {
         id: "2",
         path: "#development-consulting",
-        title: "Development consulting"
+        title: "portfolio.developmentConsulting"
     },
     {
         id: "3",
         path: "#management-consulting",
-        title: "Management Consulting"
+        title: "portfolio.managementConsulting"
     },
     {
         id: "4",
         path: "#project-consulting",
-        title: "Project Consulting"
+        title: "portfolio.projectConsulting"
     },
 ];
+
 export const FoundingBusiness = [
     {
         id: "1",
-        customer: "Spearings Factory",
-        location: "Jeddah",
-        activity: "food,industry"
+        customer: "portfolio.customers.spearingsFactory",
+        location: "cities.jeddah",
+        activity: "activities.foodIndustry"
     },
     {
         id: "2",
-        customer: "Perfer Heart",
-        location: "Website - Türkiye",
-        activity: "Industrial,craftsman"
+        customer: "portfolio.customers.perferHeart",
+        location: "locations.websiteTurkey",
+        activity: "activities.industrialCraftsman"
     },
     {
         id: "3",
-        customer: "Hubris",
-        location: "Sahabi Restaurant - Jeddah",
-        activity: "Food - Drinks"
+        customer: "portfolio.customers.hubris",
+        location: "locations.sahabiRestaurant",
+        activity: "activities.foodDrinks"
     },
     {
         id: "4",
-        customer: "Vision Generation School",
-        location: "Saudi Arabia",
-        activity: "Educational"
+        customer: "portfolio.customers.visionGenerationSchool",
+        location: "locations.saudiArabia",
+        activity: "activities.educational"
     },
     {
         id: "5",
-        customer: "tourism company",
-        location: "Malaysia,Kuwait,Türkiye",
-        activity: "tourist"
+        customer: "portfolio.customers.tourismCompany",
+        location: "locations.malaysiaKuwaitTurkey",
+        activity: "activities.tourist"
     },
     {
         id: "6",
-        customer: "Al Safa Restaurant",
-        location: "Malaysia,Kuwait,Türkiye",
-        activity: "Food - Drinks"
+        customer: "portfolio.customers.alSafaRestaurant",
+        location: "locations.malaysiaKuwaitTurkey",
+        activity: "activities.foodDrinks"
     },
     {
         id: "7",
-        customer: "Silk Road",
-        location: "Malaysia",
-        activity: "car rental"
+        customer: "portfolio.customers.silkRoad",
+        location: "cities.malaysia",
+        activity: "activities.carRental"
     },
     {
         id: "8",
-        customer: "You @ you",
-        location: "Malaysia",
-        activity: "marketing"
+        customer: "portfolio.customers.youAtYou",
+        location: "cities.malaysia",
+        activity: "activities.marketing"
     },
     {
         id: "9",
-        customer: "Easy Fly",
-        location: "Malaysia / Russia",
-        activity: "tourist"
+        customer: "portfolio.customers.easyFly",
+        location: "locations.malaysiaRussia",
+        activity: "activities.tourist"
     }
 ];
+
 export const ProjectConsulting = [
     {
         id: "1",
-        customer: "Princess Nourah University",
-        location: "Al-Riyad",
-        activity: "Book Fair"
+        customer: "portfolio.customers.princessNourahUniversity",
+        location: "cities.riyadh",
+        activity: "activities.bookFair"
     },
     {
         id: "2",
-        customer: "Roshn Expo",
-        location: "Al-Riyad",
-        activity: "Book Fair"
+        customer: "portfolio.customers.roshnExpo",
+        location: "cities.riyadh",
+        activity: "activities.bookFair"
     },
     {
         id: "3",
-        customer: "Arqa Hospital",
-        location: "Al-Riyad",
-        activity: "Graffiti Art Exhibition"
+        customer: "portfolio.customers.arqaHospital",
+        location: "cities.riyadh",
+        activity: "activities.graffitiExhibition"
     },
     {
         id: "4",
-        customer: "Diriyah Gate",
-        location: "Al-Riyad",
-        activity: "Noor Al-Riyad"
+        customer: "portfolio.customers.diriyahGate",
+        location: "cities.riyadh",
+        activity: "activities.noorRiyad"
     },
     {
         id: "5",
-        customer: "Al-Riyad",
-        location: "Al-Riyad",
-        activity: "Boulevard World"
+        customer: "portfolio.customers.riyadhCity",
+        location: "cities.riyadh",
+        activity: "activities.boulevardWorld"
     },
     {
         id: "6",
-        customer: "Roshn Expo",
-        location: "Al-Riyad",
-        activity: "Black Hat"
+        customer: "portfolio.customers.roshnExpo2",
+        location: "cities.riyadh",
+        activity: "activities.blackHat"
     },
     {
         id: "7",
-        customer: "Roshn Expo",
-        location: "Al-Riyad",
-        activity: "Perfume Exhibition"
+        customer: "portfolio.customers.roshnExpo3",
+        location: "cities.riyadh",
+        activity: "activities.perfumeExhibition"
     },
     {
         id: "8",
-        customer: "Al-Riyad",
-        location: "Al-Riyad",
-        activity: "Saudi-Chinese Conference"
+        customer: "portfolio.customers.riyadhCity2",
+        location: "cities.riyadh",
+        activity: "activities.saudiChineseConference"
     },
     {
         id: "9",
-        customer: "Rits Carlton",
-        location: "Al-Riyad",
-        activity: "Joy Awards"
+        customer: "portfolio.customers.ritsCarlton",
+        location: "cities.riyadh",
+        activity: "activities.joyAwards"
     },
     {
         id: "10",
-        customer: "Roshn Expo",
-        location: "Al-Riyad",
-        activity: "Lip"
+        customer: "portfolio.customers.roshnExpo4",
+        location: "cities.riyadh",
+        activity: "activities.lip"
     },
     {
         id: "11",
-        customer: "Waterfront",
-        location: "Jeddah",
-        activity: "Formula 1"
+        customer: "portfolio.customers.waterfront",
+        location: "cities.jeddah",
+        activity: "activities.formula1"
     }
 ];
-export const ManagementConsulting =
-    [
-        {
-            id: "1",
-            customer: "PIC",
-            location: "Website - Malaysia",
-            activity: "Training"
-        },
-        {
-            id: "2",
-            customer: "Taysir Al-Sheikh Fertilizer & Petrochemicals Factory",
-            location: "Yanbu",
-            activity: "Petrochemicals"
-        },
-        {
-            id: "3",
-            customer: "Baqshan Dental Hospital Lab",
-            location: "Jeddah",
-            activity: "Medical Commercial"
-        },
-        {
-            id: "4",
-            customer: "Modern Oceans",
-            location: "Jeddah / Madinah",
-            activity: "Industrial"
-        },
-        {
-            id: "5",
-            customer: "Administrative & Financial Center",
-            location: "Jeddah",
-            activity: "Training"
-        },
-        {
-            id: "6",
-            customer: "Insha'a Engineering Consultancy",
-            location: "Jeddah",
-            activity: "Contracting"
-        },
-        {
-            id: "7",
-            customer: "Sky Park",
-            location: "Malaysia",
-            activity: "Real Estate Development"
-        },
-        {
-            id: "8",
-            customer: "Balubaid (Property Management)",
-            location: "Jeddah",
-            activity: "Private Properties"
-        },
-        {
-            id: "9",
-            customer: "Al-Furqan Center",
-            location: "Jeddah",
-            activity: "Educational"
-        },
-        {
-            id: "10",
-            customer: "Sunway",
-            location: "Malaysia",
-            activity: "Entertainment"
-        }
-    ]
-export const DevelopmentConsulting =
-    [
-        {
-            id: "1",
-            customer: "Awafi Ice Cream Factory",
-            location: "Mecca",
-            activity: "Food Industry"
-        },
-        {
-            id: "2",
-            customer: "Al-Furat Water Factory",
-            location: "Yemen",
-            activity: "Industrial"
-        },
-        {
-            id: "3",
-            customer: "Abu Dan Medical",
-            location: "Website - Saudi Arabia",
-            activity: "Medical"
-        },
-        {
-            id: "4",
-            customer: "Al-Nawal Golden Hotel",
-            location: "Mecca",
-            activity: "Service (Hajj & Umrah)"
-        },
-        {
-            id: "5",
-            customer: "Akad for Consumer Goods",
-            location: "Riyadh",
-            activity: "Commercial"
-        },
-        {
-            id: "6",
-            customer: "Al-Himam Entertainment Company",
-            location: "Saudi Arabia",
-            activity: "Entertainment - Event Management"
-        },
-        {
-            id: "7",
-            customer: "Hijrah Road",
-            location: "Saudi Arabia / Egypt",
-            activity: "Logistics"
-        },
-        {
-            id: "8",
-            customer: "Abu Kanon Shawarma",
-            location: "Malaysia",
-            activity: "Food"
-        },
-        {
-            id: "9",
-            customer: "Pillar",
-            location: "Riyadh / Jeddah",
-            activity: "Industrial - Marine Services"
-        }
-    ]
+
+export const ManagementConsulting = [
+    {
+        id: "1",
+        customer: "portfolio.customers.pic",
+        location: "locations.websiteMalaysia",
+        activity: "activities.training"
+    },
+    {
+        id: "2",
+        customer: "portfolio.customers.taysirFactory",
+        location: "cities.yanbu",
+        activity: "activities.petrochemicals"
+    },
+    {
+        id: "3",
+        customer: "portfolio.customers.baqshanDental",
+        location: "cities.jeddah",
+        activity: "activities.medicalCommercial"
+    },
+    {
+        id: "4",
+        customer: "portfolio.customers.modernOceans",
+        location: "locations.jeddahMedina",
+        activity: "activities.industrial"
+    },
+    {
+        id: "5",
+        customer: "portfolio.customers.adminFinancialCenter",
+        location: "cities.jeddah",
+        activity: "activities.training"
+    },
+    {
+        id: "6",
+        customer: "portfolio.customers.inshaaEngineering",
+        location: "cities.jeddah",
+        activity: "activities.contracting"
+    },
+    {
+        id: "7",
+        customer: "portfolio.customers.skyPark",
+        location: "cities.malaysia",
+        activity: "activities.realEstate"
+    },
+    {
+        id: "8",
+        customer: "portfolio.customers.balubaid",
+        location: "cities.jeddah",
+        activity: "activities.privateProperties"
+    },
+    {
+        id: "9",
+        customer: "portfolio.customers.alFurqanCenter",
+        location: "cities.jeddah",
+        activity: "activities.educational"
+    },
+    {
+        id: "10",
+        customer: "portfolio.customers.sunway",
+        location: "cities.malaysia",
+        activity: "activities.entertainment"
+    }
+];
+
+export const DevelopmentConsulting = [
+    {
+        id: "1",
+        customer: "portfolio.customers.awafiIceCream",
+        location: "cities.mecca",
+        activity: "activities.foodIndustry"
+    },
+    {
+        id: "2",
+        customer: "portfolio.customers.alFuratWater",
+        location: "cities.yemen",
+        activity: "activities.industrial"
+    },
+    {
+        id: "3",
+        customer: "portfolio.customers.abuDanMedical",
+        location: "locations.websiteSaudi",
+        activity: "activities.medical"
+    },
+    {
+        id: "4",
+        customer: "portfolio.customers.alNawalHotel",
+        location: "cities.mecca",
+        activity: "activities.serviceHajj"
+    },
+    {
+        id: "5",
+        customer: "portfolio.customers.akadGoods",
+        location: "cities.riyadh",
+        activity: "activities.commercial"
+    },
+    {
+        id: "6",
+        customer: "portfolio.customers.alHimamEntertainment",
+        location: "locations.saudiArabia",
+        activity: "activities.eventManagement"
+    },
+    {
+        id: "7",
+        customer: "portfolio.customers.hijrahRoad",
+        location: "locations.saudiEgypt",
+        activity: "activities.logistics"
+    },
+    {
+        id: "8",
+        customer: "portfolio.customers.abuKanonShawarma",
+        location: "cities.malaysia",
+        activity: "activities.food"
+    },
+    {
+        id: "9",
+        customer: "portfolio.customers.pillar",
+        location: "locations.riyadhJeddah",
+        activity: "activities.marineServices"
+    }
+];
+
 export const WhyUsFeatures = [
     {
         id: 1,
-        title: "Our Global Expertise",
-        description: "Our team has extensive and in-depth experience in dealing with various global markets, ensuring that our solutions align with international best practices."
+        title: "whyUs.features.globalExpertise.title",
+        description: "whyUs.features.globalExpertise.description"
     },
     {
         id: 2,
-        title: "Innovative Solutions",
-        description: "We don't just provide traditional solutions; we constantly strive for innovation and offer new strategies that help you outperform competitors."
+        title: "whyUs.features.innovativeSolutions.title",
+        description: "whyUs.features.innovativeSolutions.description"
     },
     {
         id: 3,
-        title: "A True Partnership",
-        description: "We believe your success is our success. Therefore, we work with you as a true partner, providing the necessary support and guidance every step of the way."
+        title: "whyUs.features.truePartnership.title",
+        description: "whyUs.features.truePartnership.description"
     }
 ];
+
 export const GoalsData = [
     {
         id: 1,
-        title: "Employees",
+        title: "goals.employees",
         target: 1000,
-        icon: "FaUsers" // اسم الأيقونة من react-icons
+        icon: "FaUsers"
     },
     {
         id: 2,
-        title: "Products",
+        title: "goals.products",
         target: 200,
-        icon: "FaCube" // اسم الأيقونة من react-icons
+        icon: "FaCube"
     },
     {
         id: 3,
-        title: "Customers",
+        title: "goals.customers",
         target: 500,
-        icon: "FaHandshake" // اسم الأيقونة من react-icons
+        icon: "FaHandshake"
     },
     {
         id: 4,
-        title: "Partners",
+        title: "goals.partners",
         target: 20,
-        icon: "FaAward" // اسم الأيقونة من react-icons
+        icon: "FaAward"
     },
 ];
-// src/data.jsx
-// ... (Your other data here) ...
 
 // Footer data
 export const FooterData = {
     mainInfo: {
-        title: "Loujico",
-        description: "Your strategic partner in business solutions, training, and innovation. We empower your success through expert consulting and dedicated partnership.",
+        title: "company.name",
+        description: "footer.description",
     },
     contactInfo: {
-        title: "Get In Touch",
-        address: "Riyadh, Saudi Arabia",
+        title: "footer.contactTitle",
+        address: "footer.address",
         email: "info@loujico.com",
         phone: "+966 50 123 4567"
     },
     socialLinks: [
         {
             id: 1,
-            name: "LinkedIn",
+            name: "Linkedin",
             url: "https://www.linkedin.com/company/loujico",
             icon: "FaLinkedin"
         },
@@ -380,19 +383,19 @@ export const FooterData = {
         },
         {
             id: 5,
-            name: "YouTube",
+            name: "Youtube",
             url: "https://www.youtube.com/@loujico",
             icon: "FaYoutube"
         },
         {
             id: 6,
-            name: "TikTok",
+            name: "Tiktok",
             url: "https://www.tiktok.com/@loujico",
             icon: "FaTiktok"
         },
         {
             id: 7,
-            name: "WhatsApp",
+            name: "Whatsapp",
             url: "https://wa.me/966501234567",
             icon: "FaWhatsapp"
         },
@@ -418,27 +421,27 @@ export const FooterData = {
     quickLinks: [
         {
             id: 1,
-            title: "Home",
+            title: "nav.home",
             url: "#home"
         },
         {
             id: 2,
-            title: "Portfolio",
+            title: "nav.portfolio",
             url: "#portfolio"
         },
         {
             id: 3,
-            title: "Why Us",
+            title: "nav.whyUs",
             url: "#why-us"
         },
         {
             id: 4,
-            title: "Goals",
+            title: "nav.goals",
             url: "#goals"
         },
         {
             id: 5,
-            title: "Contact",
+            title: "nav.contact",
             url: "#contact"
         }
     ]

@@ -1,5 +1,6 @@
 // src/components/Footer.jsx
 import React from "react";
+import { useTranslation } from "react-i18next";
 import {
   FaLinkedin,
   FaTwitter,
@@ -15,6 +16,11 @@ import {
 import { FooterData } from "../data";
 
 const Footer = () => {
+  const {
+    t,
+    i18n: { language },
+  } = useTranslation();
+
   const SocialIcons = {
     FaLinkedin: FaLinkedin,
     FaTwitter: FaTwitter,
@@ -33,30 +39,37 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Section 1: Brand Info & Description */}
-          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+          <div className="flex flex-col items-center md:items-start text-center">
             <img
-              src="/public/assets/image/logo.png" // تأكد من وجود الصورة في مجلد public
+              src="/public/assets/image/logo.png"
               alt="Loujico Logo"
               className="w-32 h-auto mb-3"
             />
-            <p className="text-sm leading-relaxed max-w-sm">
-              {FooterData.mainInfo.description}
+            <p
+              className={`text-sm leading-relaxed max-w-sm ${
+                language === "ar" ? "md:text-right" : "md:text-left"
+              }`}
+            >
+              {t(FooterData.mainInfo.description)}
             </p>
           </div>
 
           {/* Section 2: Quick Links */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <h4 className="text-xl font-semibold mb-5 text-white">
-              Quick Links
+              {t("footer.quickLinks")}
             </h4>
             <ul className="space-y-2">
               {FooterData.quickLinks.map((link) => (
-                <li key={link.id}>
+                <li
+                  className={`${language === "ar" ? "md:text-right" : ""}`}
+                  key={link.id}
+                >
                   <a
                     href={link.url}
                     className="text-sm hover:text-[#B88647] transition-colors duration-300"
                   >
-                    {link.title}
+                    {t(link.title)}
                   </a>
                 </li>
               ))}
@@ -66,15 +79,15 @@ const Footer = () => {
           {/* Section 3: Contact Info */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <h4 className="text-xl font-semibold mb-5 text-white">
-              Contact Info
+              {t(FooterData.contactInfo.title)}
             </h4>
             <ul className="space-y-2">
-              <li>
+              <li className={`${language === "ar" ? "md:text-right" : ""}`}>
                 <span className="text-sm">
-                  {FooterData.contactInfo.address}
+                  {t(FooterData.contactInfo.address)}
                 </span>
               </li>
-              <li>
+              <li className={`${language === "ar" ? "md:text-right" : ""}`}>
                 <a
                   href={`mailto:${FooterData.contactInfo.email}`}
                   className="text-sm hover:text-[#B88647] transition-colors duration-300"
@@ -82,7 +95,11 @@ const Footer = () => {
                   {FooterData.contactInfo.email}
                 </a>
               </li>
-              <li>
+              <li
+                className={`${
+                  language === "ar" ? "md:text-right dir-ltr" : ""
+                }`}
+              >
                 <a
                   href={`tel:${FooterData.contactInfo.phone}`}
                   className="text-sm hover:text-[#B88647] transition-colors duration-300"
@@ -95,7 +112,9 @@ const Footer = () => {
 
           {/* Section 4: Social Media Links */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <h4 className="text-xl font-semibold mb-5 text-white">Follow Us</h4>
+            <h4 className="text-xl font-semibold mb-5 text-white">
+              {t("nav.followUs")}
+            </h4>
             <div className="flex flex-wrap justify-center md:justify-start gap-3">
               {FooterData.socialLinks.map((social) => {
                 const IconComponent = SocialIcons[social.icon];
@@ -106,6 +125,7 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-2xl hover:text-[#B88647] transition-colors duration-300 transform hover:scale-110"
+                    title={t(social.name)} // Added title for accessibility
                   >
                     {IconComponent && <IconComponent />}
                   </a>
@@ -116,9 +136,15 @@ const Footer = () => {
         </div>
 
         <div className="text-center text-gray-500 mt-10 pt-6 border-t border-gray-700">
-          <p className="text-xs leading-relaxed">
-            &copy; {new Date().getFullYear()} Loujico. All Rights Reserved.
-          </p>
+          <p
+            className="text-xs leading-relaxed"
+            dangerouslySetInnerHTML={{
+              __html: t("footer.copyright", {
+                year: new Date().getFullYear(),
+                company: t("company.name"),
+              }),
+            }}
+          />
         </div>
       </div>
     </footer>

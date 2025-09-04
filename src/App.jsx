@@ -1,5 +1,6 @@
 // src/App.jsx
 
+import "./i18n";
 import React from "react";
 import Nav from "./components/Nav/Nav";
 import Hero from "./components/Hero";

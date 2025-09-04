@@ -1,12 +1,17 @@
 // src/components/PortfolioSection.jsx
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import SplitLineHeader from "./SplitLineHeader";
 import { motion } from "framer-motion";
 
-const PortfolioSection = ({ title, data }) => {
+const PortfolioSection = ({ title, id, data }) => {
+  const {
+    t,
+    i18n: { language },
+  } = useTranslation();
   const [slidesToShow, setSlidesToShow] = useState(3);
 
   useEffect(() => {
@@ -53,13 +58,10 @@ const PortfolioSection = ({ title, data }) => {
   };
 
   return (
-    <section
-      id={title.toLowerCase().replace(/ /g, "-")}
-      className="py-10 bg-[#153457] text-white"
-    >
+    <section id={id} className="py-10 bg-[#153457] text-white">
       <div className="container mx-auto sm:px-5">
         {/* العناوين - تم إعادتها هنا */}
-        <SplitLineHeader title={title} isSubtitle={true} />
+        <SplitLineHeader title={t(title)} isSubtitle={true} />
 
         <Slider {...settings}>
           {data.map((project, index) => (
@@ -80,23 +82,31 @@ const PortfolioSection = ({ title, data }) => {
                 {/* الجزء العلوي - اسم العميل (تم تغيير لون الخلفية) */}
                 <div className="bg-[#7899B2] text-white p-4 flex items-center justify-center h-1/2">
                   <h3 className="text-3xl font-extrabold text-center group-hover:text-[var(--main-color)] transition duration-300">
-                    {project.customer}
+                    {t(project.customer)}
                   </h3>
                 </div>
 
                 {/* الجزء السفلي - التفاصيل */}
                 <div className="flex-grow p-4 text-[#1F476F] flex flex-col justify-center">
-                  <p className="flex items-center text-lg mb-2">
+                  <p
+                    className={`flex items-center text-lg mb-2 ${
+                      language === "ar" ? "flex-row-reverse" : ""
+                    }`}
+                  >
                     <span className="font-semibold text-[#B88647] mr-2">
-                      Location:
+                      {t("portfolio.location")}
                     </span>
-                    {project.location}
+                    {t(project.location)}
                   </p>
-                  <p className="flex items-center text-lg">
+                  <p
+                    className={`flex items-center text-lg ${
+                      language === "ar" ? "flex-row-reverse" : ""
+                    }`}
+                  >
                     <span className="font-semibold text-[#B88647] mr-2">
-                      Activity:
+                      {t("portfolio.activity")}
                     </span>
-                    {project.activity}
+                    {t(project.activity)}
                   </p>
                 </div>
               </div>

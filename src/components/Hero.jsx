@@ -1,7 +1,12 @@
-// src/components/Hero.jsx
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Hero = () => {
+  const {
+    t,
+    i18n: { language },
+  } = useTranslation();
+
   return (
     <section
       id="home"
@@ -9,23 +14,23 @@ const Hero = () => {
     >
       <div className="container mx-auto flex flex-col-reverse md:flex-row items-center justify-between px-4 ">
         {/* قسم المحتوى (النص) */}
-        <div className="md:w-1/2 text-center md:text-left">
+        <div
+          className={`md:w-1/2 text-center ${
+            language === "en" ? "md:text-left" : "md:text-right"
+          }`}
+        >
           <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-4">
-            Welcome to <span className="text-[#B88647]">Loujico</span> Company.
+            {t("hero.welcome")}
+            <span className="text-[#B88647]">{t("hero.companyName")}</span>.
           </h1>
           <p className="text-lg md:text-xl text-gray-300 mb-6">
-            Loujico is a company specializing in providing consulting,
-            management, training, and research services to companies and
-            clients. The company seeks to support companies' performance and
-            achieve their strategic goals by offering innovative and customized
-            solutions, with a focus on improving efficiency and reducing daily
-            burdens.
+            {t("hero.description")}
           </p>
           <a
             href="#contact"
             className="inline-block bg-[#B88647] hover:bg-[#a17a41] text-white font-bold py-3 px-6 rounded-full transition duration-300"
           >
-            Contact Us
+            {t("hero.contactButton")}
           </a>
         </div>
 
@@ -33,8 +38,8 @@ const Hero = () => {
         <div className="md:w-1/2 flex justify-center md:justify-end mb-8 md:mb-0">
           <img
             src="/public/assets/image/Hero.png"
-            alt="صورة تعبر عن خدمات الشركة"
-            className=" lg:w-[500px] md:w-[400px] w-[300px] rounded-full object-cover"
+            alt={t("hero.imageAlt")}
+            className="lg:w-[500px] md:w-[400px] w-[300px] rounded-full object-cover"
           />
         </div>
       </div>
