@@ -33,8 +33,9 @@ const Goals = () => {
                 {IconComponent && (
                   <IconComponent className="h-16 w-16 text-[#B88647] mb-4" />
                 )}
-                <div className="text-5xl md:text-6xl font-extrabold text-white mb-2">
+                <div className="text-5xl md:text-6xl font-extrabold text-white mb-2 dir-ltr">
                   {/* لون أبيض للأرقام */}
+                  <span>+</span>
                   <CountUp
                     end={goal.target}
                     duration={2.5}
